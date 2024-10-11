@@ -36,7 +36,7 @@ with sync_playwright() as p:
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[2]/input"
                 ).click()
-                page.wait_for_timeout(1000)
+                page.wait_for_timeout(5000)
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a"
                 ).click()
@@ -49,6 +49,8 @@ with sync_playwright() as p:
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[2]/input"
                 ).click()
+
+                page.wait_for_timeout(1000)
 
                 page.goto("https://usyd.libcal.com/spaces?lid=3330&gid=0&c=0")
 
