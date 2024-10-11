@@ -3,7 +3,7 @@ name = "usyd-libcal-auto-booking"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-dependencies = [playwright, pyotp]
+dependencies = ["playwright", "pyotp"]
 
 [tool.uv]
 use_cache = false
