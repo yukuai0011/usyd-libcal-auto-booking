@@ -1,8 +1,7 @@
-from playwright.sync_api import sync_playwright
-
 import os
 
 import pyotp
+from playwright.sync_api import sync_playwright
 
 UNIKEY = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
@@ -29,8 +28,13 @@ with sync_playwright() as p:
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[2]/div[2]/span/input"
                 ).first.fill(PASSWORD)
+
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[3]/div/span/div/label"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[2]/input"
                 ).click()
                 page.wait_for_timeout(1000)
                 page.locator(
@@ -42,6 +46,63 @@ with sync_playwright() as p:
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[4]/div/div[2]/span/input"
                 ).first.fill(totp.now())
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[2]/input"
+                ).click()
+
+                page.goto("https://usyd.libcal.com/spaces?lid=3330&gid=0&c=0")
+
+                for _ in range(14):
+                    page.locator(
+                        "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
+                    ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[10]/td/div/div[2]/div[21]/a/div/div/div"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[5]/div/select"
+                ).select_option("Arts and Social Sciences")
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
+                ).click()
+
+                page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
+
+                for _ in range(14):
+                    page.locator(
+                        "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
+                    ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[10]/td/div/div[2]/div[27]/a/div/div/div"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[5]/div/select"
+                ).select_option("Arts and Social Sciences")
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
+                ).click()
 
                 no_error = True
             except Exception as e:
