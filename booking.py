@@ -1,4 +1,3 @@
-from zmq import CHANNEL
 from playwright.sync_api import sync_playwright
 
 import os
@@ -7,7 +6,7 @@ import pyotp
 
 UNIKEY = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
-TOPT_CODE = os.getenv("TOPT_CODE")
+TOPT_CODE = os.getenv("TOPT_CØODE")
 
 UNIKEY = input("Enter your unikey: ")
 PASSWORD = input("Enter your password: ")
@@ -15,7 +14,7 @@ TOPT_CODE = input("Enter your totp code: ")
 
 with sync_playwright() as p:
     for browser_type in [p.chromium]:
-        browser = browser_type.launch(headless=False, CHANNEL="msedge-beta")
+        browser = browser_type.launch(headless=False, channel="msedge-beta")
         page = browser.new_page()
 
         no_error = False
