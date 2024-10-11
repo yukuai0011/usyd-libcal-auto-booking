@@ -106,6 +106,60 @@ with sync_playwright() as p:
                     "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
                 ).click()
 
+                page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
+
+                for _ in range(2):
+                    page.locator(
+                        "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
+                    ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[28]/td/div/div[2]/div[21]/a/div/div/div"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[5]/div/select"
+                ).select_option("Arts and Social Sciences")
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
+                ).click()
+
+                page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
+
+                for _ in range(2):
+                    page.locator(
+                        "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
+                    ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[28]/td/div/div[2]/div[27]/a/div/div/div"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
+                ).click()
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[5]/div/select"
+                ).select_option("Arts and Social Sciences")
+
+                page.locator(
+                    "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
+                ).click()
+
                 no_error = True
             except Exception as e:
                 pass
