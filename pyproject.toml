@@ -6,4 +6,4 @@ readme = "README.md"
 dependencies = ["playwright", "pyotp"]
 
 [tool.uv]
-use_cache = false
+no-cache = true
