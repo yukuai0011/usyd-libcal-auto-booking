@@ -3,6 +3,15 @@ name: usyd-libcal-auto-booking
 on:
   workflow_call:
     inputs:
+      unikey:
+        required: true
+        type: string
+      password:
+        required: true
+        type: string
+      totp:
+        required: true
+        type: string
       num_days_from_now:
         required: true
         type: number
@@ -27,6 +36,6 @@ jobs:
       run: |
         uv sync
         uv run -m playwright install --with-deps
-        uv run booking.py --unikey ${{ secrets.UNIKEY }} --password ${{ secrets.UNI_PASSWORD }} --totp ${{ secrets.UNI_TOPT_CODE }} \
+        uv run booking.py --unikey ${{ inputs.unikey }} --password ${{ inputs.password }} --totp ${{ inputs.totp }} \
         --num-days-from-now ${{ inputs.num_days_from_now }} --booking-page-url ${{ inputs.booking_page_url }} \
         --seat-full-xpath ${{ inputs.seat_full_xpath }}
