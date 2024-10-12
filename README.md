@@ -55,7 +55,7 @@ Then you can run the script by executing the following command:
 ```bash
 uv sync 
 uv run -m playwright install --with-deps
-uv run booking.py --unikey <UNIKEY> --password <>UNI_PASSWORD> --totp $<>UNI_TOPT_SECERT> \
+uv run booking.py --unikey <UNIKEY> --password <>UNI_PASSWORD> --totp $<>UNI_TOPT_SECRET> \
 --booking-seats-json-path <PATH_TO_JSON_FILE> 
 ```
 
