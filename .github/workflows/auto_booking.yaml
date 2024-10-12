@@ -22,8 +22,8 @@ jobs:
       - name: Set up environment variables
         run: |
           echo "UNIKEY=${{ secrets.UNIKEY }}" >> .env
-          echo "LIBCAL_PASSWORD=${{ secrets.UNI_PASSWORD }}" >> .env
-          echo "LIBCAL_URL=${{ secrets.UNI_TOPT_CØODE }}" >> .env
+          echo "UNI_PASSWORD=${{ secrets.UNI_PASSWORD }}" >> .env
+          echo "UNI_TOPT_CODE=${{ secrets.UNI_TOPT_CODE }}" >> .env
 
     # Step 4: Run the script
       - name: Run the script
