@@ -3,9 +3,9 @@ import os
 import pyotp
 from playwright.sync_api import sync_playwright
 
-UNIKEY = os.getenv("USERNAME")
-PASSWORD = os.getenv("PASSWORD")
-TOPT_CODE = os.getenv("TOPT_CØODE")
+UNIKEY = os.getenv("UNIKEY")
+UNI_PASSWORD = os.getenv("UNI_PASSWORD")
+UNI_TOPT_CØODE = os.getenv("UNI_TOPT_CØODE")
 
 with sync_playwright() as p:
     for browser_type in [p.chromium]:
@@ -23,7 +23,7 @@ with sync_playwright() as p:
                 ).first.fill(UNIKEY)
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[2]/div[2]/span/input"
-                ).first.fill(PASSWORD)
+                ).first.fill(UNI_PASSWORD)
 
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[3]/div/span/div/label"
@@ -38,7 +38,7 @@ with sync_playwright() as p:
                 ).click()
                 page.wait_for_timeout(1000)
                 # calculate totp
-                totp = pyotp.TOTP(TOPT_CODE)
+                totp = pyotp.TOTP(UNI_TOPT_CØODE)
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[4]/div/div[2]/span/input"
                 ).first.fill(totp.now())

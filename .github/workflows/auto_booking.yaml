@@ -7,8 +7,28 @@ jobs:
   auto_booking:
     runs-on: ubuntu-latest
     steps:
-    Step 1: Checkout the repository
+    # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout
         with:
           ref: ${{ github.ref }} 
+
+    # Step 2: Install uv
+
+      - name: Install uv
+        uses: astral-sh/setup-uv
+
+    # Step 3: set up environment variables
+      - name: Set up environment variables
+        run: |
+          echo "UNIKEY=${{ secrets.UNIKEY }}" >> .env
+          echo "LIBCAL_PASSWORD=${{ secrets.UNI_PASSWORD }}" >> .env
+          echo "LIBCAL_URL=${{ secrets.UNI_TOPT_CØODE }}" >> .env
+
+    # Step 4: Run the script
+      - name: Run the script
+        run: |
+          uv sync
+          playwright install
+          uv run auto_booking.py
+
