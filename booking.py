@@ -1,5 +1,4 @@
 import argparse
-import os
 
 import pyotp
 from playwright.sync_api import sync_playwright
@@ -10,12 +9,24 @@ parser = argparse.ArgumentParser(description="USYD LibCal Auto Booking Script")
 parser.add_argument("--unikey", required=True, help="Your USYD Unikey")
 parser.add_argument("--password", required=True, help="Your USYD password")
 parser.add_argument("--totp", required=True, help="Your TOTP secret code")
+parser.add_argument(
+    "--num-days-from-now", required=True, help="Number of days from now to book"
+)
+parser.add_argument(
+    "--booking-page-url", required=True, help="Number of hours from now to book"
+)
+parser.add_argument(
+    "--seat-full-xpath", required=True, help="Xpath of the button to book a full seat"
+)
 
 args = parser.parse_args()
 
 unikey = args.unikey
 uni_password = args.password
 uni_topt_code = args.totp
+num_days_from_now = args.num_days_from_now
+booking_page_url = args.booking_page_url
+seat_full_xpath = args.seat_full_xpath
 
 print("123")
 
@@ -57,100 +68,15 @@ with sync_playwright() as p:
 
         page.wait_for_timeout(5000)
 
-        page.goto("https://usyd.libcal.com/spaces?lid=3330&gid=0&c=0")
-        print("Navigated to usyd.libcal.com/spaces?lid=3330&gid=0&c=0")
+        page.goto(booking_page_url)
+        print(f"Navigated to {booking_page_url}")
 
-        for _ in range(14):
+        for _ in range(int(num_days_from_now)):
             page.locator(
                 "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
             ).click()
 
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[10]/td/div/div[2]/div[23]/a/div/div/div"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[5]/div/select"
-        ).select_option("Arts and Social Sciences")
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
-        ).click()
-
-        page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
-        print("Navigated to usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
-
-        for _ in range(14):
-            page.locator(
-                "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
-            ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[10]/td/div/div[2]/div[27]/a/div/div/div"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[5]/div/select"
-        ).select_option("Arts and Social Sciences")
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
-        ).click()
-
-        page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
-
-        for _ in range(2):
-            page.locator(
-                "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
-            ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[28]/td/div/div[2]/div[21]/a/div/div/div"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
-        ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[5]/div/select"
-        ).select_option("Arts and Social Sciences")
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[6]/div/button"
-        ).click()
-
-        page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
-        print("Navigated to usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
-
-        for _ in range(2):
-            page.locator(
-                "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
-            ).click()
-
-        page.locator(
-            "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[28]/td/div/div[2]/div[27]/a/div/div/div"
-        ).click()
+        page.locator(f"xpath={seat_full_xpath}").click()
 
         page.locator(
             "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
