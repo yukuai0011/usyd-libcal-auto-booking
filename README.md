@@ -1,6 +1,6 @@
 # usyd-libcal-auto-booking-public
 
-Automatically book a study space at the University of Sydney Library using Playwright
+Automatically book a study space at the University of Sydney Library using Playwright And Github Actions.
 
 
 It will book the following study spaces:
