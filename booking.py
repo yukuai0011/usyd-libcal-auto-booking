@@ -7,6 +7,8 @@ UNIKEY = os.getenv("UNIKEY")
 UNI_PASSWORD = os.getenv("UNI_PASSWORD")
 UNI_TOPT_CODE = os.getenv("UNI_TOPT_CODE")
 
+print(UNIKEY)
+
 with sync_playwright() as p:
     for browser_type in [p.chromium]:
         browser = browser_type.launch()
