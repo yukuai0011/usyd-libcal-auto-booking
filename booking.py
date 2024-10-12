@@ -17,7 +17,6 @@ unikey = args.unikey
 uni_password = args.password
 uni_topt_code = args.totp
 
-print(unikey)
 print("123")
 
 with sync_playwright() as p:
