@@ -21,9 +21,11 @@ args = parser.parse_args()
 unikey = args.unikey
 uni_password = args.password
 uni_topt_code = args.totp
-num_days_from_now = args.num_days_from_now
-booking_page_url = args.booking_page_url
-seat_full_xpath = args.seat_full_xpath
+booking_seats_json_path = args.booking_seats_json_path
+
+with open(booking_seats_json_path, "r") as f:
+    booking_seats = json.load(f)
+
 
 print("123")
 
