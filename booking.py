@@ -17,6 +17,7 @@ with sync_playwright() as p:
         while not no_error:
             try:
                 page.goto("https://sso.sydney.edu.au")
+                print("Navigated to sso.sydney.edu.au")
                 # click button based on Xpath
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[1]/div[2]/span/input"
@@ -49,6 +50,7 @@ with sync_playwright() as p:
                 page.wait_for_timeout(1000)
 
                 page.goto("https://usyd.libcal.com/spaces?lid=3330&gid=0&c=0")
+                print("Navigated to usyd.libcal.com/spaces?lid=3330&gid=0&c=0")
 
                 for _ in range(14):
                     page.locator(
@@ -76,6 +78,7 @@ with sync_playwright() as p:
                 ).click()
 
                 page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
+                print("Navigated to usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
 
                 for _ in range(14):
                     page.locator(
@@ -130,6 +133,7 @@ with sync_playwright() as p:
                 ).click()
 
                 page.goto("https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
+                print("Navigated to usyd.libcal.com/spaces?lid=3331&gid=0&c=0")
 
                 for _ in range(2):
                     page.locator(
