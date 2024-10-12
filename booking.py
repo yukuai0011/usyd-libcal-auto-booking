@@ -9,7 +9,7 @@ TOPT_CODE = os.getenv("TOPT_CØODE")
 
 with sync_playwright() as p:
     for browser_type in [p.chromium]:
-        browser = browser_type.launch(headless=False, channel="msedge-beta")
+        browser = browser_type.launch()
         page = browser.new_page()
 
         no_error = False
