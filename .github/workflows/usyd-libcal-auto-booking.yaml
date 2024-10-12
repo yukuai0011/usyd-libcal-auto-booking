@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  auto_booking_1:
+  auto_booking:
     runs-on: ubuntu-latest
     steps:
     # Step 1: Checkout the repository
