@@ -10,14 +10,14 @@ jobs:
     steps:
     # Step 1: Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }} 
 
     # Step 2: Install uv
 
       - name: Install uv
-        uses: astral-sh/setup-uv
+        uses: astral-sh/setup-uv@v3
 
     # Step 3: set up environment variables
       - name: Set up environment variables
