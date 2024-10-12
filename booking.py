@@ -26,6 +26,8 @@ seat_full_xpath = args.seat_full_xpath
 
 print("123")
 
+def book_seat(booking_page_url: str, seat_full_xpath: str, num_days_from_now: int = 1, page:
+
 with sync_playwright() as p:
     for browser_type in [p.chromium]:
         browser = browser_type.launch()
