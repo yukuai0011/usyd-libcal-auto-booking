@@ -1,3 +1,4 @@
+import argparse
 import os
 
 import pyotp
@@ -5,11 +6,17 @@ from playwright.sync_api import sync_playwright
 
 print("123")
 
-UNIKEY = os.getenv("UNIKEY")
-UNI_PASSWORD = os.getenv("UNI_PASSWORD")
-UNI_TOPT_CODE = os.getenv("UNI_TOPT_CODE")
+parser = argparse.ArgumentParser(description="USYD LibCal Auto Booking Script")
+parser.add_argument("--unikey", required=True, help="Your USYD Unikey")
+parser.add_argument("--password", required=True, help="Your USYD password")
+parser.add_argument("--totp", required=True, help="Your TOTP secret code")
 
-print(UNIKEY)
+args = parser.parse_args()
+
+unikey = args.unikey
+uni_password = args.password
+uni_topt_code = args.totp
+
 print("123")
 
 with sync_playwright() as p:
@@ -26,10 +33,10 @@ with sync_playwright() as p:
                 # click button based on Xpath
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[1]/div[2]/span/input"
-                ).first.fill(UNIKEY)
+                ).first.fill(unikey)
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[2]/div[2]/span/input"
-                ).first.fill(UNI_PASSWORD)
+                ).first.fill(uni_password)
 
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[3]/div[3]/div/span/div/label"
@@ -44,7 +51,7 @@ with sync_playwright() as p:
                 ).click()
                 page.wait_for_timeout(1000)
                 # calculate totp
-                totp = pyotp.TOTP(UNI_TOPT_CODE)
+                totp = pyotp.TOTP(uni_topt_code)
                 page.locator(
                     "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[4]/div/div[2]/span/input"
                 ).first.fill(totp.now())
