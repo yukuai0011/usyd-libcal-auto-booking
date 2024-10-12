@@ -7,10 +7,6 @@ UNIKEY = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 TOPT_CODE = os.getenv("TOPT_CØODE")
 
-UNIKEY = input("Enter your unikey: ")
-PASSWORD = input("Enter your password: ")
-TOPT_CODE = input("Enter your totp code: ")
-
 with sync_playwright() as p:
     for browser_type in [p.chromium]:
         browser = browser_type.launch(headless=False, channel="msedge-beta")
