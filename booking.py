@@ -1,4 +1,5 @@
 import argparse
+import json
 
 import pyotp
 from playwright.sync_api import sync_playwright
@@ -10,15 +11,10 @@ parser.add_argument("--unikey", required=True, help="Your USYD Unikey")
 parser.add_argument("--password", required=True, help="Your USYD password")
 parser.add_argument("--totp", required=True, help="Your TOTP secret code")
 parser.add_argument(
-    "--num-days-from-now", required=True, help="Number of days from now to book"
+    "booking-seats-json-path",
+    required=True,
+    help="Path to the JSON file containing the booking seats",
 )
-parser.add_argument(
-    "--booking-page-url", required=True, help="Number of hours from now to book"
-)
-parser.add_argument(
-    "--seat-full-xpath", required=True, help="Xpath of the button to book a full seat"
-)
-
 args = parser.parse_args()
 
 unikey = args.unikey
