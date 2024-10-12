@@ -4,11 +4,11 @@ on:
     - cron: '30 14 * * *' # 00:30 GMT+10 01:30 GMT+11
 
 jobs:
-    auto_booking:
-        runs-on: ubuntu-latest
-        steps:
-            # Step 1: Checkout the repository
-            - name: Checkout repository
-                uses: actions/checkout@v4
-                with:
-                ref: ${{ github.ref }} 
+  auto_booking:
+    runs-on: ubuntu-latest
+    steps:
+    Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout
+        with:
+          ref: ${{ github.ref }} 
