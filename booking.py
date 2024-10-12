@@ -56,7 +56,7 @@ with sync_playwright() as p:
                     ).click()
 
                 page.locator(
-                    "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[10]/td/div/div[2]/div[21]/a/div/div/div"
+                    "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[10]/td/div/div[2]/div[23]/a/div/div/div"
                 ).click()
 
                 page.locator(
