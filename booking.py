@@ -111,11 +111,11 @@ with sync_playwright() as p:
         tasks: list[tuple[Browser, str, str, int]] = [
             (
                 browser,
-                booking_seat["booking_page_url"],
-                booking_seat["seat_full_xpath"],
-                int(booking_seat["num_days_from_now"]),
+                task["booking_page_url"],
+                task["seat_full_xpath"],
+                int(task["num_days_from_now"]),
             )
-            for booking_seat in booking_seats
+            for task in booking_seats["tasks"]
         ]
 
         with multiprocessing.pool.ThreadPool(processes=4) as pool:
