@@ -58,10 +58,10 @@ Then you can run the script by executing the following command:
 ```bash
 uv sync 
 uv run -m playwright install --with-deps
-uv run booking.py --unikey <UNIKEY> --password <>UNI_PASSWORD> --totp $<>UNI_TOPT_CODE>
+uv run booking.py --unikey <UNIKEY> --password <>UNI_PASSWORD> --totp $<>UNI_TOPT_SECERT>
 --booking-seats-json-path <PATH_TO_JSON_FILE> 
 ```
 
 Here the UNI_TOPT_CODE this is the code you can get by adding google authenticator to your okta account.
 
-Note this code here is not the 6 digit code you get from the google authenticator app, it is the code that generates the 6 digit code. In other words, it is the code embedded in the QR code when use sign up for the google authenticator app. Use bitwarden to scan the QR code can reveal the code. The code should be 16 characters long, all uppercase, with numbers and letters.
+Note this code here is not the 6 digit code you get from the google authenticator app, it is the secret that generates the 6 digit code. In other words, it is the code embedded in the QR code when use sign up for the google authenticator app. Use bitwarden to scan the QR code can reveal the code. The code should be 16 characters long, all uppercase, with numbers and letters.

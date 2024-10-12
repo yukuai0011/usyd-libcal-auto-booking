@@ -25,5 +25,5 @@ jobs:
         run: |
           uv sync
           uv run -m playwright install --with-deps
-          uv run booking.py --unikey ${{ secrets.UNIKEY }} --password ${{ secrets.UNI_PASSWORD }} --totp ${{ secrets.UNI_TOPT_CODE }} \
+          uv run booking.py --unikey ${{ secrets.UNIKEY }} --password ${{ secrets.UNI_PASSWORD }} --totp ${{ secrets.UNI_TOPT_SECRET }} \
           --booking-seats-json-path 'bookings.json'
