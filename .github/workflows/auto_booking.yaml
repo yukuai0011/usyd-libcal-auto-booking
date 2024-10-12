@@ -25,4 +25,4 @@ jobs:
         run: |
           uv sync
           uv run -m playwright install --with-deps
-          uv run booking.py --unikey ${{ secrets.UNIKEY }} --password ${{ secrets.UNI_ASSWORD }} --totp ${{ secrets.UNI_TOTP }}
+          uv run booking.py --unikey ${{ secrets.UNIKEY }} --password ${{ secrets.UNI_PASSWORD }} --totp ${{ secrets.UNI_TOTP }}
