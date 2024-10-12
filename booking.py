@@ -82,6 +82,8 @@ with sync_playwright() as p:
             "xpath=/html/body/div[2]/main/div/div/div/div[4]/form/fieldset/div[2]/button"
         ).click()
 
+        page.wait_for_timeout(1000)
+
         page.locator(
             "xpath=/html/body/div[2]/main/div/div/div/div/div[2]/form/fieldset/div[4]/fieldset/div/div[1]/label"
         ).click()
