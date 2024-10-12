@@ -1,4 +1,5 @@
-name usyd-libcal-auto-booking
+name: usyd-libcal-auto-booking
+
 on:
   schedule:
     - cron: '30 14 * * *' # 00:30 GMT+10 01:30 GMT+11
