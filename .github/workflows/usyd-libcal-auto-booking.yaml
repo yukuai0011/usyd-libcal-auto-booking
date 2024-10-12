@@ -1,0 +1,32 @@
+name: usyd-libcal-auto-booking
+
+on:
+  workflow_call:
+    inputs:
+      num_days_from_now:
+        required: true
+        type: number
+      booking_page_url:
+        required: true
+        type: string
+      seat_full_xpath:
+        required: true
+        type: string
+
+jobs:
+  auto_booking:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+
+    - name: Run booking script
+      run: |
+        uv sync
+        uv run -m playwright install --with-deps
+        uv run booking.py --unikey ${{ secrets.UNIKEY }} --password ${{ secrets.UNI_PASSWORD }} --totp ${{ secrets.UNI_TOPT_CODE }} \
+        --num-days-from-now ${{ inputs.num_days_from_now }} --booking-page-url ${{ inputs.booking_page_url }} \
+        --seat-full-xpath ${{ inputs.seat_full_xpath }}
