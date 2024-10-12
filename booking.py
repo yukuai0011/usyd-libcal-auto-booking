@@ -12,7 +12,7 @@ parser.add_argument("--unikey", required=True, help="Your USYD Unikey")
 parser.add_argument("--password", required=True, help="Your USYD password")
 parser.add_argument("--totp", required=True, help="Your TOTP secret code")
 parser.add_argument(
-    "booking-seats-json-path",
+    "--booking-seats-json-path",
     required=True,
     help="Path to the JSON file containing the booking seats",
 )
