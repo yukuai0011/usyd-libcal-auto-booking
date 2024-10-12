@@ -20,7 +20,7 @@ args = parser.parse_args()
 
 unikey = args.unikey
 uni_password = args.password
-uni_topt_code = args.totp
+uni_topt_secret = args.totp
 booking_seats_json_path = args.booking_seats_json_path
 
 with open(booking_seats_json_path, "r") as f:
@@ -95,7 +95,7 @@ with sync_playwright() as p:
         ).click()
         page.wait_for_timeout(1000)
         # calculate totp
-        totp = pyotp.TOTP(uni_topt_code)
+        totp = pyotp.TOTP(uni_topt_secret)
         page.locator(
             "xpath=/html/body/div[2]/main/div[2]/div/div/div[2]/form/div[1]/div[4]/div/div[2]/span/input"
         ).first.fill(totp.now())
