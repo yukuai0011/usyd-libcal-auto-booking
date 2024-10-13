@@ -15,7 +15,7 @@ Execute at Sydney time 00:00, 01:00 if daylight saving.
 
 ## How to use
 
-prepear the seats you want to book as the following format:
+prepear the seats you want to book as a json file in the following format:
 
 ```json
 {
