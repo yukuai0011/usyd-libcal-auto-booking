@@ -45,6 +45,7 @@ def book_seat(
         page.locator(
             "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
         ).click()
+        page.wait_for_timeout(1000)
 
     page.locator(f"xpath={seat_full_xpath}").click()
 
