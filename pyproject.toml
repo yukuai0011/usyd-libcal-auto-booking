@@ -7,3 +7,7 @@ dependencies = ["playwright", "pyotp"]
 
 [tool.uv]
 no-cache = true
+prerelease = "allow"
+preview = true
+python-preference = "only-managed"
+upgrade = true
