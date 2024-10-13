@@ -11,7 +11,7 @@ It will book the following study spaces:
 - Study room M108 @ Law Library 13:00 - 15:00, 14 days from now
 - Desk 17 @ Law Library 10:00 - 16:00, 2 days from now
 
-Execute at Sydney time 00:30, 01:30 if daylight saving.
+Execute at Sydney time 00:00, 01:00 if daylight saving.
 
 ## How to use
 
