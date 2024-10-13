@@ -2,7 +2,7 @@ name: usyd-libcal-auto-booking
 
 on:
   schedule:
-    - cron: '00 14 * * *' # 00:30 GMT+10 01:30 GMT+11
+    - cron: '00 14 * * *' # 00:00 GMT+10 01:00 GMT+11
   workflow_dispatch:
 
 jobs:
