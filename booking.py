@@ -39,6 +39,8 @@ def book_seat(
     page.goto(booking_page_url)
     print(f"Navigated to {booking_page_url}")
 
+    page.wait_for_timeout(1000)
+
     for _ in range(int(num_days_from_now)):
         page.locator(
             "xpath=/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[1]/div[1]/div/button[2]"
