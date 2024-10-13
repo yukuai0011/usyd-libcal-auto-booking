@@ -15,6 +15,8 @@ Execute at Sydney time 00:00, 01:00 if daylight saving.
 
 ## How to use
 
+### General
+
 prepear the seats you want to book as a json file in the following format:
 
 ```json
@@ -48,7 +50,7 @@ prepear the seats you want to book as a json file in the following format:
 - `booking_page_url`: The URL of the booking page.
 - `seat_full_xpath`: The XPath of the seat you want to book.
 
-To obtain the xpath, you can use the browser's developer tools. For example, in Chrome, you can right-click on the element and select "Copy" -> "Copy XPath".
+To obtain the xpath, you can use the browser's developer tools. For example, in Chrome, you can right-click on the element and select "Copy" -> "Copy Full XPath".
 
 Then you can run the script by executing the following command:
 
@@ -62,3 +64,7 @@ uv run booking.py --unikey <UNIKEY> --password <>UNI_PASSWORD> --totp $<>UNI_TOP
 Here the UNI_TOPT_CODE this is the code you can get by adding google authenticator to your okta account.
 
 Note this code here is not the 6 digit code you get from the google authenticator app, it is the secret that generates the 6 digit code. In other words, it is the code embedded in the QR code when use sign up for the google authenticator app. Use bitwarden to scan the QR code can reveal the code. The code should be 16 characters long, all uppercase, with numbers and letters.
+
+### Github Actions
+
+Sample Github Actions workflow file can be find here: [`.github/workflows/usyd-libcal-auto-booking.yaml`](.github/workflows/usyd-libcal-auto-booking.yaml)
