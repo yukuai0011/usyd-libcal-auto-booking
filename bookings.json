@@ -19,6 +19,31 @@
             "num_days_from_now": 2,
             "booking_page_url": "https://usyd.libcal.com/spaces?lid=3331&gid=0&c=0",
             "seat_full_xpath": "/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[28]/td/div/div[2]/div[27]/a/div/div/div"
+        },
+        {
+            "num_days_from_now": 14,
+            "booking_page_url": "https://usyd.libcal.com/spaces?lid=3338&gid=0&c=0",
+            "seat_full_xpath": "/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[3]/td/div/div[2]/div[25]/a/div/div/div"
+        },
+        {
+            "num_days_from_now": 14,
+            "booking_page_url": "https://usyd.libcal.com/spaces?lid=3338&gid=0&c=0",
+            "seat_full_xpath": "/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[29]/td/div/div[2]/div[21]/a/div/div/div"
+        },
+        {
+            "num_days_from_now": 14,
+            "booking_page_url": "https://usyd.libcal.com/spaces?lid=3338&gid=0&c=0",
+            "seat_full_xpath": "/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[29]/td/div/div[2]/div[27]/a/div/div/div"
+        },
+        {
+            "num_days_from_now": 2,
+            "booking_page_url": "https://usyd.libcal.com/spaces?lid=3330&gid=0&c=0",
+            "seat_full_xpath": "/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[66]/td/div/div[2]/div[21]/a/div/div/div"
+        },
+        {
+            "num_days_from_now": 2,
+            "booking_page_url": "https://usyd.libcal.com/spaces?lid=3330&gid=0&c=0",
+            "seat_full_xpath": "/html/body/div[2]/main/div/div/div/div[3]/div[1]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[66]/td/div/div[2]/div[27]/a/div/div/div"
         }
     ]
 }
