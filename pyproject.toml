@@ -10,5 +10,4 @@ dependencies = ["playwright", "pyotp"]
 no-cache = true
 prerelease = "allow"
 preview = true
-python-preference = "only-managed"
 upgrade = true
