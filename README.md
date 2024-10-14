@@ -1,4 +1,4 @@
-# usyd-libcal-auto-booking
+# usyd-libcal-auto-booking-public
 
 ## Introduction
 
